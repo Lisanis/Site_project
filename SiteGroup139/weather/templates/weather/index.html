@@ -14,8 +14,13 @@
         <a class="p-2 text-dark" href="#">Информация</a>
         <a class="p-2 text-dark" href="#">Документация</a>
     </nav>
-    <a class="btn btn-outline-primary" href="#">Sing up</a>
+    <a class="btn btn-outline-primary" href="#">Sign up</a>
 </div>
+{% if key_error %}
+    <div class="alert alert-danger text-center" role="alert">
+        {{ key_error }}
+    </div>
+{% endif %}
 <div class="container mt-5">
     <div class="row">
         <div class="col-5">
@@ -23,6 +28,7 @@
             <form action="" method="post">
                 {% csrf_token %}
                 <label for="city">Город</label>
+                <br>
                 {{ form.name }}
                 <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-danger">
             </form>

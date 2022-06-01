@@ -18,15 +18,27 @@ def index(request):
 
     all_cities = []
 
+    key_error = ''
     for city in cities:
-        res = requests.get(url.format(city.name)).json()
-        city_info = {
-            'city': city.name,
-            'temp': res["main"]["temp"],
-            'icon': res["weather"][0]["icon"]
-        }
-        all_cities.append(city_info)
+        try:
+            res = requests.get(url.format(city.name)).json()
+            city_info = {
+                'city': city.name,
+                'temp': res["main"]["temp"],
+                'icon': res["weather"][0]["icon"]
+            }
+            all_cities.append(city_info)
+        except KeyError:
+            key_error = 'Город не найден!!!'
+            City.objects.all().last().delete()
 
-    context = {'all_info': all_cities, 'form': form}
+    # last_city = City.objects.all().last()
+    # city = City.objects.get(name=last_city.name)
+
+    context = {
+        'all_info': all_cities,
+        'form': form,
+        'key_error': key_error,
+    }
 
     return render(request, 'weather/index.html', context)
