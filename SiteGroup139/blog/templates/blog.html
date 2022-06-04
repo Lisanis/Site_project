@@ -2,10 +2,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-15 px-0">
+        <h1 class="display-8 fst-italic">
+            <ya-tr-span data-index="15-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                        data-value="Title of a longer featured blog post"
+                        data-selected="false">Welcome, here you can ask questions and share your impressions
+            </ya-tr-span>
+        </h1>
+    </div>
+</div>
+
+<nav class="blog-pagination" aria-label="Pagination">
+    <a class="btn btn-outline-primary rounded-pill" href="#">
+        <ya-tr-span data-index="531-0" data-translated="false" data-source-lang="en"
+                    data-target-lang="ru" data-value="Older" data-translation="Старше"
+                    data-type="trSpan" data-selected="false">Older
+        </ya-tr-span>
+    </a>
+    <a class="btn btn-outline-secondary rounded-pill disabled">
+        <ya-tr-span data-index="532-0" data-translated="false" data-source-lang="en"
+                    data-target-lang="ru" data-value="Newer" data-translation="Новее"
+                    data-type="trSpan">Newer
+        </ya-tr-span>
+    </a>
+
+
     {% for post in object_list %}
-        <div class="post-entry">
-            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title}}</a></h2>
-            <p>{{ post.body }}</p>
-        </div>
+
+    <div class="post-entry">
+        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title}}</a></h2>
+        <p>{{ post.body }}</p>
+
+    </div>
     {% endfor %}
-{% endblock content %}
+    {% endblock content %}

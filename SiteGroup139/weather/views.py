@@ -4,6 +4,7 @@ from .models import City
 from .forms import CityForm
 
 
+
 def index(request):
     appid = 'a34c20e9778841c51281a36546340e35'
     url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=' + appid
@@ -20,6 +21,7 @@ def index(request):
 
     key_error = ''
     for city in cities:
+
         try:
             res = requests.get(url.format(city.name)).json()
             city_info = {
@@ -32,6 +34,11 @@ def index(request):
             key_error = 'Город не найден!!!'
             City.objects.all().last().delete()
 
+            # for repeat in all_cities:
+            #     for repeat_city in City.objects.all():
+            #         if repeat['city'] == repeat_city:
+            #             City.objects.all().last().delete()
+            #             print(repeat['city'])
     # last_city = City.objects.all().last()
     # city = City.objects.get(name=last_city.name)
 

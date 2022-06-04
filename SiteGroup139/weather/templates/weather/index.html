@@ -11,15 +11,18 @@
     <h5 class="my-0 mr-md-auto font-weight-normal">OverOneGroup139</h5>
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="p-2 text-dark" href="{% url 'blog' %}">Блог</a>
-        <a class="p-2 text-dark" href="#">Информация</a>
-        <a class="p-2 text-dark" href="#">Документация</a>
+        <a class="p-2 text-dark" href="{% url 'credits' %}">О нас</a>
     </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
+    {% if user.is_authenticated %}
+    <a class="btn btn-outline-primary" href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a class="btn btn-outline-primary" href="{% url 'login' %}">Sign up</a>
+    {% endif %}
 </div>
 {% if key_error %}
-    <div class="alert alert-danger text-center" role="alert">
-        {{ key_error }}
-    </div>
+<div class="alert alert-danger text-center" role="alert">
+    {{ key_error }}
+</div>
 {% endif %}
 <div class="container mt-5">
     <div class="row">
