@@ -18,7 +18,7 @@ Django - для реализации веб-приложения
 1. Клонируем репозиторий (или определенную ветку) и заходим в папку:
   
 
-$ git clone --branch master https://github.com/Lisanis/Site_project.git
+`$ git clone --branch master https://github.com/Lisanis/Site_project.git
 $ cd site_project
 $ cd sitegroup139
   
