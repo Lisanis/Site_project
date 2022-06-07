@@ -3,30 +3,22 @@
 Web-сайт для отслеживания погоды городов мира, создания и редактирования blog-контента
 Данное readme включает в себя инструкцию по быстрому запуску приложения.
 
-## Инструкция по запуску приложения на Django
-
-Приложение состоит из:
-Базы данных в которой храняться данные с hh.ru
-Модулей api_client и db_worker, которые позволяют получать данные с hh.ru и записывать их в базу
-Flask-приложения для отображения диаграмм
-Использованные библиотеки:
-SQLAlchemy и Flask-SQLAlchemy - для взаимодействия с СУБД
+## Использованные библиотеки:
 Requests - для запросов к веб-ресурсам (api)
-Flask - для реализации веб-приложения
-Celery[redis] - для запуска сбора данных по рассписанию
-и многие другие.
-Для запуска необходимо:
+Django - для реализации веб-приложения
+
+## Для запуска необходимо:
 ✅ Python
-✅ Redis
-✅ SQLite
+✅ Django
 ✅ Все зависимости из requirements.txt
 
+## Инструкция по запуску приложения на Django
 Перед запуском установить [Django](https://www.djangoproject.com/download), [GIT](https://git-scm.com/download/win).
 При запуске на windows необходимо клонировать репозиторий на диск c:/
 1. Клонируем репозиторий (или определенную ветку) и заходим в папку:
   
 
-$ git clone --branch development https://github.com/Lisanis/Site_project.git
+$ git clone --branch master https://github.com/Lisanis/Site_project.git
 $ cd site_project
 $ cd sitegroup139
   
