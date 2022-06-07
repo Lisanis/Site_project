@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+
+<body>
+<div class="nav-right">
+    <a href="{% url 'post_new' %}"> New Blog Post +</a>
+</div>
+<br>
+
 <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-15 px-0">
         <h1 class="display-8 fst-italic">
@@ -30,10 +37,11 @@
 
     {% for post in object_list %}
 
-    <div class="post-entry">
+    <div class="post-entry p-2 text-white ">
         <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title}}</a></h2>
         <p>{{ post.body }}</p>
 
     </div>
+    </body>
     {% endfor %}
     {% endblock content %}

@@ -1,0 +1,21 @@
+body{
+	color: #fff;
+	font-family: sans-serif;
+	background : url('background.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: centre;
+    margin-top: 150px
+    font-size: 50px;
+}
+
+p{
+    font-size: 25px;
+    display: block;
+    margin: 0 auto
+    width: 80%;
+}

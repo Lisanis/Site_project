@@ -4,7 +4,7 @@
 {% block content %}
     <h1>New post</h1>
     <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
+        <a class="text-white">{{ form.as_p }}</a>
         <input type="submit" value="Save"/>
     </form>
 {% endblock %}
