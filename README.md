@@ -17,12 +17,12 @@ Web-приложение для отслеживания погоды и вед�
 >>> git clone --branch master https://github.com/Lisanis/Site_project.git
 >>> cd site_project/sitegroup139
 ```
-2. Генерируем Django Secret Key и добавляем в файл ___ (SECRET_KEY = 'Django Secret Key'):
+2. Генерируем Django Secret Key и добавляем в файл .creds/key.py (SECRET_KEY = 'Django Secret Key'):
 ```
 >>> from django.core.management import utils
 >>> print(utils.get_random_secret_key())
 ```
-3. Регистрируемся в https://openweathermap.org и в личном кабинете генерируем свой Weather API Key, который также добавляем в файл ___ (MY_API_KEY = 'Weather API Key')
+3. Регистрируемся в https://openweathermap.org и в личном кабинете генерируем свой Weather API Key, который также добавляем в файл .creds/key.py (MY_API_KEY = 'Weather API Key')
 
 4. Устанавливаем пакеты из requirements.txt:
 ```
