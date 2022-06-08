@@ -1,72 +1,43 @@
-# Журнал работ
+# Учебный проект по курсу Python-разработчик
 
-Web-сайт для отслеживания погоды городов мира, создания и редактирования blog-контента
+Web-приложение для отслеживания погоды и ведения блога.
 
-Данное readme включает в себя инструкцию по быстрому запуску приложения.
-***
-## Использованные библиотеки:
-Requests - для запросов к веб-ресурсам (api)
+## Использованные технологии:
 
-Django - для реализации веб-приложения
+- GIT
+- python
+- django
+- django-crispy-forms
+- requests
 
-и [многое другое]()
-***
-## Для запуска необходимо:
-   ✅ Python
-   
-   ✅ Django
-   
-   ✅ Все зависимости из requirements.txt
-***
-## Инструкция по запуску приложения на Django
-Перед запуском установить [GIT](https://git-scm.com/download/win),и ознакомитья с установкой [Django](https://www.djangoproject.com/download).
-При запуске на windows необходимо клонировать репозиторий на диск c:/
+## Инструкция по запуску приложения
+
 1. Клонируем репозиторий (или определенную ветку) и заходим в папку:
-  
-`git clone --branch master https://github.com/Lisanis/Site_project.git`
+```
+>>> git clone --branch master https://github.com/Lisanis/Site_project.git
+>>> cd site_project/sitegroup139
+```
+2. Генерируем Django Secret Key и добавляем в файл ___ (SECRET_KEY = 'Django Secret Key'):
+```
+>>> from django.core.management import utils
+>>> print(utils.get_random_secret_key())
+```
+3. Регистрируемся в https://openweathermap.org и в личном кабинете генерируем свой Weather API Key, который также добавляем в файл ___ (MY_API_KEY = 'Weather API Key')
 
-`cd site_project/sitegroup139`
-
-2. Переходим на сайт https://openweathermap.org, регестрируемся и в личном кабинете генерируем свой Weather API_KEY. 
-3. Создаём пустой файл.py и прописываем туда код: из которого генерируем Django SECRET_KEY.
-
-`from django.core.management import utils`
-
-`print(utils.get_random_secret_key())`
-
-4. Переходим в папку sitegroup139/settings.py и меняем соответственно MY_API_KEY = 'Weather API_KEY', SECRET_KEY = 'Django SECRET_KEY'.
-
-5. Устанавливаем пакеты из requirements.txt:
-
-`pip install -r requirements.txt` 
-
-6. Создаем и запускаем миграции для работы с БД:
-
-`py manage.py makemigrations`
-
-`manage.py migrate`
-
-7. Запускаем сервер:
-
-`py manage.py runserver`
-
-8. Приложение доступно по адресу http://127.0.0.1:8000/
-*** 
-## Работа в Django-admin
-
-1. Для начала работы создаем суперпользователя:
-
-`py manage.py createsuperuser`
-
-2. Вводим произвольные имя, почту и пароль:
-- Имя пользователя: admin
-- Электронная почта: admin@example.com
-- Password: admin
-- Password (again): admin
-3. Кабинет админстратора находится по адресу http://127.0.0.1:8000/admin/
-4. Суперпользователю доступные все функции кабинета:
-- просмотр, создание, изменение и удаление пользователей и любых параметров пользователей
-- назначение прав другим пользователям
-- создание групп пользователей
-5. Для создания администраторов приложения требуется при создании или изменении пользователя установить галочку "Статус персонала" и наделить его необходимыми правами. Пользователи со статусом персонала имеют возможность заходить в кабинет администратора
-6. Для блокировки пользователя требуется убрать галочку "Активный"
+4. Устанавливаем пакеты из requirements.txt:
+```
+>>> pip install -r requirements.txt
+```
+5. Запускаем миграции для работы с базой данных:
+```
+>>> manage.py migrate
+```
+6. Запускаем сервер:
+```
+>>> python manage.py runserver
+```
+7. Приложение доступно по адресу http://127.0.0.1:8000/
+8. Для работы в Django-admin создаем суперпользователя:
+```
+>>> python manage.py createsuperuser
+```
